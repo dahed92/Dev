@@ -44,3 +44,20 @@ var app = new Framework7({});
 
 $("#tab2").load("pages/tab-1.html");
 $("#tab3").load("pages/tab-2.html");
+$("#tab4").load("pages/tab-3.html");
+
+$$('#tab1').on('tab:show', function () {
+    app.showNavbar($('.navbar'));
+});
+ 
+$$('#tab2').on('tab:show', function () {
+    app.hideNavbar($('.navbar'));
+});
+ 
+$$('#tab3').on('tab:show', function () {
+    app.hideNavbar($('.navbar'));
+});    
+
+$$('#tab4').on('tab:show', function () {
+    app.hideNavbar($('.navbar'));
+}); 

@@ -16,6 +16,34 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+ @font-face
+ {
+    font-family: "Roboto-Bold";
+    src: url("../src/fonts/Roboto-Bold.ttf");
+ }
+ @font-face
+ {
+    font-family: "Roboto-Light";
+    src: url("../src/fonts/Roboto-Light.ttf");
+ }
+ @font-face
+ {
+    font-family: "Roboto-Regular";
+    src: url("../src/fonts/Roboto-Regular.ttf");
+ }
+ @font-face
+ {
+    font-family: "Roboto-Medium";
+    src: url("../src/fonts/Roboto-Medium.ttf");
+ }
+ @font-face
+ {
+    font-family: "Roboto-Thin";
+    src: url("../src/fonts/Roboto-Thin.ttf");
+ }
+
+
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
@@ -112,4 +140,76 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+
+.ftop_bar
+{
+    height: 15vh !important;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.toolbar
+{
+    height: 7vh !important;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+}
+.nav-btn
+{
+    position: absolute;
+    width: 10vw;
+    height: 4vh;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.home-btn
+{
+    background-image: url("../src/icons/Home@3x.png");
+}
+.explore-btn
+{
+    background-image: url("../src/icons/Explore@3x.png");
+}
+.messages-btn
+{
+    background-image: url("../src/icons/Messages@3x.png");
+}
+.notif-btn
+{
+    background-image: url("../src/icons/Notifications@3x.png");
+}
+.flow-btn
+{
+    margin-top: -5vh !important;
+    height: 15vh !important;
+    width: 25vw !important;
+    background-image: url("../src/icons/FLOW@3x.png");
+}
+
+.tab-link.active
+{
+    filter: brightness(70%) saturate(1000%) hue-rotate(140deg);
+}
+#tab1
+{
+    padding-top: 15vh;
+}
+
+#tab2, #tab3, #tab4
+{
+    padding-top: 0px !important;
+}
+
+
+.ftitle
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #1A84EF;
+    font-family: 'Roboto-Bold';
+    font-size: 25px; 
 }
