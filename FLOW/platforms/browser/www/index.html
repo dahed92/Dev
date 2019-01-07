@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="Dependencies/Framework7/framework7.ios.colors.min.css">
     <link rel="stylesheet" type="text/css" href="Dependencies/Framework7/framework7.ios.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="Dependencies/Framework7/framework7.md.colors.min.css">
+    <link rel="stylesheet" type="text/css" href="Dependencies/Framework7/framework7.md.min.css"> -->
     <script type="text/javascript" src="Dependencies/Jquery/jquery_v331.js"></script>
     <script type="text/javascript" src="Dependencies/Framework7/framework7_v171.js"></script>
     <title>FLOW</title>
@@ -25,9 +27,47 @@
             <div class="navbar no-border ftop_bar">
                 <div class="navbar-inner">
                     <div class="ftitle">FLOW</div>
+                    <div class="faccount"></div>
+                    <div class="fstories_title">Stories</div>
+                    <ul class="fstory_list">
+                        <li>
+                            <div class="fstory_block unread">
+                                <img src="src/icons/FLOW@3x.png" class="fstory_pic">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fstory_block unread">
+                                <img src="src/icons/FLOW@3x.png" class="fstory_pic">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fstory_block unread">
+                                <img src="src/icons/FLOW@3x.png" class="fstory_pic">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fstory_block">
+                                <img src="src/icons/FLOW@3x.png" class="fstory_pic">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fstory_block">
+                                <img src="src/icons/FLOW@3x.png" class="fstory_pic">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fstory_block">
+                                <img src="src/icons/FLOW@3x.png" class="fstory_pic">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fstory_block">
+                                <img src="src/icons/FLOW@3x.png" class="fstory_pic">
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
-
             <div class="toolbar no-border">
                 <div class="toolbar-inner">
                     <a href="#tab1" class="nav-btn home-btn tab-link active"></a>
@@ -59,62 +99,64 @@
                         <!-- Tabs, tabs wrapper -->
                         <div class="tabs">
                             <!-- Tab 1, active by default -->
-                            <div id="tab1" class="page-content tab active hide-navbar-on-scroll">
-                                <p>so long text in tab 1</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
+                            <div id="tab1" class="page-content pull-to-refresh-content tab active"
+                                data-ptr-distance="55">
+                                <div class="pull-to-refresh-layer">
+                                    <div class="preloader"></div>
+                                    <div class="pull-to-refresh-arrow" id="ptr_arrow"></div>
+                                </div>
+
+                                <!-- usual content below -->
+                                <div class="list-block">
+                                    START<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    ...<br>
+                                    END<br>
+                                </div>
                             </div>
                             <!-- Tab 2 -->
                             <div id="tab2" class="page-content tab hide-navbar-on-scroll">

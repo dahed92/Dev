@@ -7,5 +7,7 @@
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "author": "Apache Cordova Team",
   "icons": [],
-  "start_url": "index.html"
+  "orientation": "portrait",
+  "start_url": "index.html",
+  "theme_color": "#f7f7f8"
 }

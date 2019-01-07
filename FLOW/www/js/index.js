@@ -49,15 +49,42 @@ $("#tab4").load("pages/tab-3.html");
 $$('#tab1').on('tab:show', function () {
     app.showNavbar($('.navbar'));
 });
- 
+
 $$('#tab2').on('tab:show', function () {
     app.hideNavbar($('.navbar'));
 });
- 
+
 $$('#tab3').on('tab:show', function () {
     app.hideNavbar($('.navbar'));
-});    
+});
 
 $$('#tab4').on('tab:show', function () {
     app.hideNavbar($('.navbar'));
-}); 
+});
+
+
+var ptrContent = $$('.pull-to-refresh-content');
+$("#ptr_arrow").css("opacity", "0");
+
+// Add 'refresh' listener on it
+ptrContent.on('ptr:refresh', function (e) {
+    // Emulate 2s loading
+    console.log("refreshing...")
+    setTimeout(function () {
+        // When loading done, we need to reset it
+        console.log("refreshed !");
+        $("#ptr_arrow").css("opacity", "0");
+        app.pullToRefreshDone();
+    }, 1000);
+});
+
+ptrContent.on('ptr:pullstart', function (e) {
+    console.log("pull start");
+    $("#ptr_arrow").css("opacity", "1");
+
+});
+
+ptrContent.on('ptr:pullend', function (e) {
+    console.log("pull end");
+    $("#ptr_arrow").css("opacity", "0");
+});
