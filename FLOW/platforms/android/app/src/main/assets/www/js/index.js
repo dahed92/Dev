@@ -40,7 +40,10 @@ app.initialize();
 
 var $$ = Dom7;
 
-var app = new Framework7({});
+var app = new Framework7({
+    showBarsOnPageScrollEnd: false,
+    material: true
+});
 
 $("#tab2").load("pages/tab-1.html");
 $("#tab3").load("pages/tab-2.html");

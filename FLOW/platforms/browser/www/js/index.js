@@ -40,7 +40,10 @@ app.initialize();
 
 var $$ = Dom7;
 
-var app = new Framework7({});
+var app = new Framework7({
+    showBarsOnPageScrollEnd: false,
+    material: true
+});
 
 $("#tab2").load("pages/tab-1.html");
 $("#tab3").load("pages/tab-2.html");
@@ -66,17 +69,17 @@ $$('#tab4').on('tab:show', function () {
 var ptrContent = $$('.pull-to-refresh-content');
 $("#ptr_arrow").css("opacity", "0");
 
-// // Add 'refresh' listener on it
-// ptrContent.on('ptr:refresh', function (e) {
-//     // Emulate 2s loading
-//     console.log("refreshing...")
-//     setTimeout(function () {
-//         // When loading done, we need to reset it
-//         console.log("refreshed !");
-//         $("#ptr_arrow").css("opacity", "0");
-//         app.pullToRefreshDone();
-//     }, 3000);
-// });
+// Add 'refresh' listener on it
+ptrContent.on('ptr:refresh', function (e) {
+    // Emulate 2s loading
+    console.log("refreshing...")
+    setTimeout(function () {
+        // When loading done, we need to reset it
+        console.log("refreshed !");
+        $("#ptr_arrow").css("opacity", "0");
+        app.pullToRefreshDone();
+    }, 1000);
+});
 
 ptrContent.on('ptr:pullstart', function (e) {
     console.log("pull start");
