@@ -45,6 +45,8 @@ var app = new Framework7({
     material: true
 });
 
+var connected = false;
+
 $("#tab2").load("pages/tab-1.html");
 $("#tab3").load("pages/tab-2.html");
 $("#tab4").load("pages/tab-3.html");
@@ -65,7 +67,7 @@ $$('#tab4').on('tab:show', function () {
     app.hideNavbar($('.navbar'));
 });
 
-
+var userConnected = false;
 var ptrContent = $$('.pull-to-refresh-content');
 $("#ptr_arrow").css("opacity", "0");
 
@@ -90,4 +92,15 @@ ptrContent.on('ptr:pullstart', function (e) {
 ptrContent.on('ptr:pullend', function (e) {
     console.log("pull end");
     $("#ptr_arrow").css("opacity", "0");
+});
+
+function test() {
+    console.log("go to tab");
+    // app.showTab("#tab4", true);
+}
+
+$$('.fneed_connect').on('click', function () {
+    if (!connected) {
+        app.popup('.popup-connect');
+    }
 });

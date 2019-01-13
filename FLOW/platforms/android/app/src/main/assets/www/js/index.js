@@ -45,6 +45,10 @@ var app = new Framework7({
     material: true
 });
 
+var connected = false;
+DisconnectUser();
+
+
 $("#tab2").load("pages/tab-1.html");
 $("#tab3").load("pages/tab-2.html");
 $("#tab4").load("pages/tab-3.html");
@@ -65,7 +69,7 @@ $$('#tab4').on('tab:show', function () {
     app.hideNavbar($('.navbar'));
 });
 
-
+var userConnected = false;
 var ptrContent = $$('.pull-to-refresh-content');
 $("#ptr_arrow").css("opacity", "0");
 
@@ -90,4 +94,57 @@ ptrContent.on('ptr:pullstart', function (e) {
 ptrContent.on('ptr:pullend', function (e) {
     console.log("pull end");
     $("#ptr_arrow").css("opacity", "0");
+});
+
+function ConnectUser() {
+    console.log("user connected");
+    connected = true;
+    $(".fneed_connect").css({
+        "display": "none"
+    });
+    //$( "#fswipe_area" ).css({"pointer-events": "all"});
+}
+
+function DisconnectUser() {
+    console.log("user disconnected");
+    connected = false;
+    $(".fneed_connect").css({
+        "display": "block"
+    });
+    app.showTab("#tab1");
+    //$( "#fswipe_area" ).css({"pointer-events": "none"});
+}
+
+$$('.fneed_connect').on('click', function () {
+    if (!connected) {
+        app.popup('.popup-connect');
+    }
+});
+
+$$('#tab2').on('tab:show', function () {
+    if (!connected) {
+        setTimeout(function () {
+            app.showTab("#tab1");
+            app.popup('.popup-connect');
+        }, 100);
+        //app.popup('.popup-connect');
+    }
+});
+$$('#tab3').on('tab:show', function () {
+    if (!connected) {
+        setTimeout(function () {
+            app.showTab("#tab1");
+            app.popup('.popup-connect');
+        }, 100);
+        //app.popup('.popup-connect');
+    }
+});
+$$('#tab4').on('tab:show', function () {
+    if (!connected) {
+        setTimeout(function () {
+            app.showTab("#tab1");
+            app.popup('.popup-connect');
+        }, 100);
+        //app.popup('.popup-connect');
+    }
 });
