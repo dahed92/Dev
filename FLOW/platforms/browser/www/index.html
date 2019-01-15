@@ -23,7 +23,13 @@
 
 
     <!--
-        FLOW by Chris / Victor / Alexis & Thomas
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
         -->
 
     <meta name="format-detection" content="telephone=no">
@@ -47,18 +53,18 @@
                 <div class="navbar-inner">
                     <!-- We have home navbar without left link-->
                     <div class="center">
-                        My App
+                        FLOW
                     </div>
                 </div>
                 <div class="subnavbar">
                     <!-- Buttons row as tabs controller in Subnavbar-->
                     <div class="buttons-row">
                         <!-- Link to 1st tab, active -->
-                        <a href="#tab1" class="button active tab-link">Tab1</a>
+                        <a href="#tab1" class="button active tab-link">TAB1</a>
                         <!-- Link to 2nd tab -->
-                        <a href="#tab2" class="button tab-link">Tab2</a>
+                        <a href="#tab2" class="button tab-link">TAB2</a>
 
-                        <a href="#tab3" class="button tab-link">Tab3</a>
+                        <a href="#tab3" class="button tab-link">TAB3</a>
                     </div>
                 </div>
             </div>
@@ -68,64 +74,44 @@
                     <!-- Tabs swipeable wrapper, required to switch tabs with swipes -->
                     <div class="tabs-swipeable-wrap">
                         <!-- Tabs, tabs wrapper -->
+                        
                         <div class="tabs">
                             <!-- Tab 1, active by default -->
+                            
                             <div id="tab1" class="page-content tab active hide-navbar-on-scroll">
-                                <p>so long text in tab 1</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
+                            
+                                <div class="fflow">
+                                    <div class="ftop_part">
+                                        <p class="fposter_name">Vanessa</p>
+                                        <p class="fpost_date">5 min</p>
+                                        <p class="fdots">...</p>
+                                        <img class="fplay_button" src="images/play.png">
+                                        <div class="fposter_photo"></div>
+                                        <div class="ffollower1"></div>
+                                        <div class="ffollower2"></div>
+                                        <div class="ffollower3"></div>
+                                    </div>
+                                    <div class="fbottom_part">
+                                         <p class="fpost_title">What an Amazing Sound</p>
+                                        <p class="fpost_description">very cool sound recorded</p>
+                                       <p class="fpost_tag">#Fresh #Summer</p>
+                                          <div class="flike">
+                                            <img class="fimg_impression" src="images/Like.png">
+                                            <p class="ftxt_impression">2.5k</p>
+                                        </div>
+                                        <div class="fecho">
+                                                <img class="fimg_impression" src="images/Echo.png">
+                                                <p class="ftxt_impression">8.2k</p>
+                                        </div>
+                                        <div class="fcomment">
+                                                <img class="fimg_impression" src="images/Comment.png">
+                                                <p class="ftxt_impression">605</p>
+                                        </div>
+                                           
+                                        
+                                    </div>
+                                </div>
+                                
                             </div>
                             <!-- Tab 2 -->
                             <div id="tab2" class="page-content tab hide-navbar-on-scroll">
@@ -135,6 +121,7 @@
                             <div id="tab3" class="page-content tab hide-navbar-on-scroll">
                                 <!-- TAB 3 CONTENT -->
                             </div>
+                            <button id="fbutton" onclick="duplicate()">+</button>
                         </div>
                     </div>
                 </div>
