@@ -46,10 +46,12 @@ var app = new Framework7({
 });
 
 var connected = false;
+DisconnectUser();
 
-$("#tab2").load("pages/tab-1.html");
-$("#tab3").load("pages/tab-2.html");
-$("#tab4").load("pages/tab-3.html");
+$("#tab1").load("pages/home.html");
+$("#tab2").load("pages/explore.html");
+$("#tab3").load("pages/messages.html");
+$("#tab4").load("pages/notifications.html");
 
 $$('#tab1').on('tab:show', function () {
     app.showNavbar($('.navbar'));
@@ -94,13 +96,55 @@ ptrContent.on('ptr:pullend', function (e) {
     $("#ptr_arrow").css("opacity", "0");
 });
 
-function test() {
-    console.log("go to tab");
-    // app.showTab("#tab4", true);
+function ConnectUser() {
+    console.log("user connected");
+    connected = true;
+    $(".fneed_connect").css({
+        "display": "none"
+    });
+    //$( "#fswipe_area" ).css({"pointer-events": "all"});
+}
+
+function DisconnectUser() {
+    console.log("user disconnected");
+    connected = false;
+    $(".fneed_connect").css({
+        "display": "block"
+    });
+    app.showTab("#tab1");
+    //$( "#fswipe_area" ).css({"pointer-events": "none"});
 }
 
 $$('.fneed_connect').on('click', function () {
     if (!connected) {
         app.popup('.popup-connect');
+    }
+});
+
+$$('#tab2').on('tab:show', function () {
+    if (!connected) {
+        setTimeout(function () {
+            app.showTab("#tab1");
+            app.popup('.popup-connect');
+        }, 100);
+        //app.popup('.popup-connect');
+    }
+});
+$$('#tab3').on('tab:show', function () {
+    if (!connected) {
+        setTimeout(function () {
+            app.showTab("#tab1");
+            app.popup('.popup-connect');
+        }, 100);
+        //app.popup('.popup-connect');
+    }
+});
+$$('#tab4').on('tab:show', function () {
+    if (!connected) {
+        setTimeout(function () {
+            app.showTab("#tab1");
+            app.popup('.popup-connect');
+        }, 100);
+        //app.popup('.popup-connect');
     }
 });

@@ -48,10 +48,10 @@ var app = new Framework7({
 var connected = false;
 DisconnectUser();
 
-
-$("#tab2").load("pages/tab-1.html");
-$("#tab3").load("pages/tab-2.html");
-$("#tab4").load("pages/tab-3.html");
+$("#tab1").load("pages/home.html");
+$("#tab2").load("pages/explore.html");
+$("#tab3").load("pages/messages.html");
+$("#tab4").load("pages/notifications.html");
 
 $$('#tab1').on('tab:show', function () {
     app.showNavbar($('.navbar'));
@@ -71,7 +71,6 @@ $$('#tab4').on('tab:show', function () {
 
 var userConnected = false;
 var ptrContent = $$('.pull-to-refresh-content');
-$("#ptr_arrow").css("opacity", "0");
 
 // Add 'refresh' listener on it
 ptrContent.on('ptr:refresh', function (e) {

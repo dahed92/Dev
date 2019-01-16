@@ -359,3 +359,9 @@ h1 {
     bottom: 0;
     /* background-color: rgba(255, 0, 0, 0.5); */
 }
+
+.popup-connect
+{
+    top: 40vh !important;
+    height: 60vh !important;
+}
