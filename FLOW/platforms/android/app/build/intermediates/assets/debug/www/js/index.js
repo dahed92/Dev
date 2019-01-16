@@ -40,7 +40,111 @@ app.initialize();
 
 var $$ = Dom7;
 
-var app = new Framework7({});
+var app = new Framework7({
+    showBarsOnPageScrollEnd: false,
+    material: true
+});
 
-$("#tab2").load("pages/tab-1.html");
-$("#tab3").load("pages/tab-2.html");
+var connected = false;
+DisconnectUser();
+
+$("#tab1").load("pages/home.html");
+$("#tab2").load("pages/explore.html");
+$("#tab3").load("pages/messages.html");
+$("#tab4").load("pages/notifications.html");
+
+$$('#tab1').on('tab:show', function () {
+    app.showNavbar($('.navbar'));
+});
+
+$$('#tab2').on('tab:show', function () {
+    app.hideNavbar($('.navbar'));
+});
+
+$$('#tab3').on('tab:show', function () {
+    app.hideNavbar($('.navbar'));
+});
+
+$$('#tab4').on('tab:show', function () {
+    app.hideNavbar($('.navbar'));
+});
+
+var userConnected = false;
+var ptrContent = $$('.pull-to-refresh-content');
+$("#ptr_arrow").css("opacity", "0");
+
+// Add 'refresh' listener on it
+ptrContent.on('ptr:refresh', function (e) {
+    // Emulate 2s loading
+    console.log("refreshing...")
+    setTimeout(function () {
+        // When loading done, we need to reset it
+        console.log("refreshed !");
+        $("#ptr_arrow").css("opacity", "0");
+        app.pullToRefreshDone();
+    }, 1000);
+});
+
+ptrContent.on('ptr:pullstart', function (e) {
+    console.log("pull start");
+    $("#ptr_arrow").css("opacity", "1");
+
+});
+
+ptrContent.on('ptr:pullend', function (e) {
+    console.log("pull end");
+    $("#ptr_arrow").css("opacity", "0");
+});
+
+function ConnectUser() {
+    console.log("user connected");
+    connected = true;
+    $(".fneed_connect").css({
+        "display": "none"
+    });
+    //$( "#fswipe_area" ).css({"pointer-events": "all"});
+}
+
+function DisconnectUser() {
+    console.log("user disconnected");
+    connected = false;
+    $(".fneed_connect").css({
+        "display": "block"
+    });
+    app.showTab("#tab1");
+    //$( "#fswipe_area" ).css({"pointer-events": "none"});
+}
+
+$$('.fneed_connect').on('click', function () {
+    if (!connected) {
+        app.popup('.popup-connect');
+    }
+});
+
+$$('#tab2').on('tab:show', function () {
+    if (!connected) {
+        setTimeout(function () {
+            app.showTab("#tab1");
+            app.popup('.popup-connect');
+        }, 100);
+        //app.popup('.popup-connect');
+    }
+});
+$$('#tab3').on('tab:show', function () {
+    if (!connected) {
+        setTimeout(function () {
+            app.showTab("#tab1");
+            app.popup('.popup-connect');
+        }, 100);
+        //app.popup('.popup-connect');
+    }
+});
+$$('#tab4').on('tab:show', function () {
+    if (!connected) {
+        setTimeout(function () {
+            app.showTab("#tab1");
+            app.popup('.popup-connect');
+        }, 100);
+        //app.popup('.popup-connect');
+    }
+});

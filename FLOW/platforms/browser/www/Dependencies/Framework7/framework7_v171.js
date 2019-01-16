@@ -9233,7 +9233,7 @@ return t7;
         
             function handleTouchStart(e) {
                 if (isTouched) {
-                    if (app.device.os === 'android') {
+                    if (app.device.os === 'ios') {
                         if ('targetTouches' in e && e.targetTouches.length > 1) return;
                     }
                     else {

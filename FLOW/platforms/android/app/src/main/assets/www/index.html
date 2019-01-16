@@ -1,45 +1,21 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
 
 <head>
-
-
     <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
+        FLOW by Chris / Victor / Alexis & Thomas
         -->
-
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/framework7.ios.colors.min.css">
-    <link rel="stylesheet" type="text/css" href="css/framework7.ios.min.css">
-    <script type="text/javascript" src="Framework7/jquery_v331.js"></script>
-    <script type="text/javascript" src="Framework7/framework7_v171.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="Dependencies/Framework7/framework7.md.colors.min.css">
+    <link rel="stylesheet" type="text/css" href="Dependencies/Framework7/framework7.md.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="Dependencies/Framework7/framework7.ios.colors.min.css">
+    <link rel="stylesheet" type="text/css" href="Dependencies/Framework7/framework7.ios.min.css">
+
+    <script type="text/javascript" src="Dependencies/Jquery/jquery_v331.js"></script>
+    <script type="text/javascript" src="Dependencies/Framework7/framework7_v171.js"></script>
     <title>FLOW</title>
 </head>
 
@@ -49,25 +25,93 @@
     <!-- Views-->
     <div class="views tabs">
         <div id="menu1" class="view view-main tab active">
-            <div class="navbar">
+            <div class="navbar no-border ftop_bar">
                 <div class="navbar-inner">
-                    <!-- We have home navbar without left link-->
-                    <div class="center">
-                        My App
-                    </div>
-                </div>
-                <div class="subnavbar">
-                    <!-- Buttons row as tabs controller in Subnavbar-->
-                    <div class="buttons-row">
-                        <!-- Link to 1st tab, active -->
-                        <a href="#tab1" class="button active tab-link">Tab1</a>
-                        <!-- Link to 2nd tab -->
-                        <a href="#tab2" class="button tab-link">Tab2</a>
-
-                        <a href="#tab3" class="button tab-link">Tab3</a>
-                    </div>
+                    <div class="ftitle">FLOW</div>
+                    <div class="faccount"></div>
+                    <div class="fstories_title">Stories</div>
+                    <ul class="fstory_list">
+                        <li>
+                            <div class="fstory_block">
+                                <div class="fplus"></div>
+                                <img src="src/pictures/guy1.jpg" class="fstory_pic fnoshadow">
+                                <div class="unread_shadow"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fstory_block unread">
+                                <img src="src/pictures/girl1.jpg" class="fstory_pic">
+                                <div class="unread_shadow"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fstory_block unread">
+                                <img src="src/pictures/girl2.jpg" class="fstory_pic">
+                                <div class="unread_shadow"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fstory_block">
+                                <img src="src/pictures/girl3.jpg" class="fstory_pic">
+                                <div class="unread_shadow"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fstory_block">
+                                <img src="src/pictures/girl2.jpg" class="fstory_pic">
+                                <div class="unread_shadow"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fstory_block">
+                                <img src="src/pictures/girl1.jpg" class="fstory_pic">
+                                <div class="unread_shadow"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fstory_block">
+                                <img src="src/pictures/girl3.jpg" class="fstory_pic">
+                                <div class="unread_shadow"></div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
+            <div class="toolbar no-border">
+                <div class="toolbar-inner">
+                    <a href="#tab1" class="nav-btn home-btn tab-link active"></a>
+                    <a href="#tab2" class="nav-btn explore-btn tab-link"></a>
+                    <a href="#" data-popup=".popup-record" class="nav-btn flow-btn open-popup"></a>
+                    <a href="#tab3" class="nav-btn messages-btn tab-link"></a>
+                    <!-- <a href="#tab4" class="nav-btn notif-btn tab-link"></a> -->
+                    <a href="#tab4" class="nav-btn notif-btn tab-link"></a>
+                    <div class="fneed_connect" style="left: 17vw;"></div>
+                    <div class="fneed_connect" style="left: 68vw;"></div>
+                    <div class="fneed_connect" style="left: 84vw;"></div>
+                    <!-- <a href="#tab1" class="button active tab-link">Tab1</a>
+
+                    <a href="#tab2" class="button tab-link">Tab2</a>
+
+                    <a href="#tab3" class="button tab-link">Tab3</a> -->
+                </div>
+            </div>
+
+            <div class="popup popup-record">
+                <div class="content-block">
+                    <p>RECORD</p>
+                    <p><a href="#" class="close-popup">Close popup</a></p>
+                    <p>...</p>
+                </div>
+            </div>
+
+            <div class="popup popup-connect">
+                <div class="content-block">
+                    <p>Your need an account</p>
+                    <p><a href="#" class="close-popup">Close popup</a></p>
+                    <p>Lorem ipsum dolor ...</p>
+                </div>
+            </div>
+
             <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
             <div class="pages navbar-through toolbar-through">
                 <div class="page with-subnavbar">
@@ -76,62 +120,9 @@
                         <!-- Tabs, tabs wrapper -->
                         <div class="tabs">
                             <!-- Tab 1, active by default -->
-                            <div id="tab1" class="page-content tab active hide-navbar-on-scroll">
-                                <p>so long text in tab 1</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
-                                <p>...</p>
+                            <div id="tab1" class="page-content pull-to-refresh-content tab active hide-navbar-on-scroll"
+                                data-ptr-distance="55">
+                                
                             </div>
                             <!-- Tab 2 -->
                             <div id="tab2" class="page-content tab hide-navbar-on-scroll">
@@ -140,6 +131,9 @@
 
                             <div id="tab3" class="page-content tab hide-navbar-on-scroll">
                                 <!-- TAB 3 CONTENT -->
+                            </div>
+                            <div id="tab4" class="page-content tab hide-navbar-on-scroll">
+                                <!-- TAB 4 CONTENT -->
                             </div>
                         </div>
                     </div>
@@ -152,7 +146,7 @@
 
 
 
-    
+
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 </body>
