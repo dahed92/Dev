@@ -17,109 +17,134 @@
  * under the License.
  */
 * {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
+    -webkit-touch-callout: none;
+    /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;
+    /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;
+    /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color: #E4E4E4;
+    background-image: linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image: -webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image: -ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image: -webkit-gradient(linear,
         left top,
         left bottom,
         color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
+        color-stop(0.51, #E4E4E4));
+    background-attachment: fixed;
     font-family: Roboto;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    width:100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
 }
 
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
+    background: url(../img/logo.png) no-repeat center top;
+    /* 170px x 200px */
+    position: absolute;
+    /* position in the center of the screen */
+    left: 50%;
+    top: 50%;
+    height: 50px;
+    /* text area height */
+    width: 225px;
+    /* text area width */
+    text-align: center;
+    padding: 180px 0px 0px 0px;
+    /* image height is 200px (bottom 20px are overlapped with text) */
+    margin: -115px 0px 0px -112px;
+    /* offset vertical: half of image height and text area height */
+    /* offset horizontal: half of text area width */
 }
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
+        background-position: left center;
+        padding: 75px 0px 75px 170px;
+        /* padding-top + padding-bottom + text area = image height */
+        margin: -90px 0px 0px -198px;
+        /* offset vertical: half of image height */
+        /* offset horizontal: half of image width and text area width */
     }
 }
 
 h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0px;
+    overflow: visible;
+    padding: 0px;
+    text-align: center;
 }
 
 .event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 12px;
+    margin: 0px 30px;
+    padding: 2px 0px;
 }
 
 .event.listening {
-    background-color:#333333;
-    display:block;
+    background-color: #333333;
+    display: block;
 }
 
 .event.received {
-    background-color:#4B946A;
-    display:none;
+    background-color: #4B946A;
+    display: none;
 }
 
 @keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+    from {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1.0;
+    }
 }
- 
+
 @-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+    from {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1.0;
+    }
 }
- 
+
 .blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+    animation: fade 3000ms infinite;
+    -webkit-animation: fade 3000ms infinite;
 }
-p
-{
+
+p {
     display: block;
     margin-top: 0vh;
     text-align: center;
 }
 
-.flow
-{
+.fflow {
     position: relative;
     width: 95vw;
     margin-left: 2.5vw;
@@ -130,8 +155,8 @@ p
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     font-family: Roboto;
 }
- .poster_photo
-{
+
+.fposter_photo {
     position: absolute;
     width: 15vw;
     height: 15vw;
@@ -139,15 +164,14 @@ p
     left: 2vw;
     border: 1.2px solid rgb(255, 255, 255);
     background-image: url(../images/poster.jpg);
-    background-size: 100% 100%;
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
     border-radius: 10vw;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
-.follower1
-{
+.ffollower1 {
     position: absolute;
     width: 10vw;
     height: 10vw;
@@ -155,14 +179,14 @@ p
     left: 75vw;
     border: 1.2px solid rgb(235, 13, 105);
     background-image: url(../images/follower1.jpg);
-    background-size: 100% 100%;
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
     border-radius: 10vw;
     z-index: 3;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-.follower2
-{
+
+.ffollower2 {
     position: absolute;
     width: 10vw;
     height: 10vw;
@@ -170,14 +194,14 @@ p
     left: 80vw;
     border: 1.2px solid rgb(166, 10, 238);
     background-image: url(../images/follower2.jpg);
-    background-size: 100% 100%;
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
     border-radius: 10vw;
     z-index: 2;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-.follower3
-{
+
+.ffollower3 {
     position: absolute;
     width: 10vw;
     height: 10vw;
@@ -185,15 +209,14 @@ p
     left: 83vw;
     border: 1.2px solid rgb(95, 133, 236);
     background-image: url(../images/follower3.png);
-    background-size: 100% 100%;
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
     border-radius: 10vw;
     z-index: 1;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.top_part
-{
+.ftop_part {
     position: absolute;
     display: block;
     top: 0vh;
@@ -203,11 +226,11 @@ p
     border-top-right-radius: 2vw;
     background-image: url(../images/lambo.jpg);
     background-size: cover;
+    background-position: center;
 }
 
-.poster_name
-{
-    position:absolute;;
+.fposter_name {
+    position: absolute;
     display: block;
     top: -2vh;
     font-size: 4vw;
@@ -217,9 +240,10 @@ p
     color: #FFFFFF;
     text-align: left;
     font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
-.post_date
-{
+
+.fpost_date {
     position: absolute;
     font-size: 3vw;
     left: 1.5vw;
@@ -228,10 +252,22 @@ p
     height: 2vh;
     color: #FFFFFF;
     text-align: left;
-    
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+
 }
-.play_button
+
+.fdots
 {
+    position:absolute;
+    left: 87vw;
+    top: -2.5vh;
+    font-size: 7vw;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    color: #FFFFFF;
+    font-family: 'Times New Roman', Times, serif;
+}
+.fplay_button {
     position: absolute;
     width: 12vw;
     height: 7vh;
@@ -240,8 +276,7 @@ p
     text-align: center;
 }
 
-.bottom_part
-{
+.fbottom_part {
     position: absolute;
     width: 95vw;
     height: 11vh;
@@ -250,8 +285,8 @@ p
     border-bottom-left-radius: 2vw;
     border-bottom-right-radius: 2vw;
 }
-.post_title
-{
+
+.fpost_title {
     position: absolute;
     display: block;
     width: 50vw;
@@ -262,10 +297,10 @@ p
     font-weight: bold;
     color: #909597;
     text-align: left;
-    
+
 }
-.post_description
-{
+
+.fpost_description {
     position: absolute;
     display: block;
     width: 50vw;
@@ -275,10 +310,10 @@ p
     top: 4vh;
     color: #909597;
     text-align: left;
-    
+
 }
-.post_tag
-{
+
+.fpost_tag {
     position: absolute;
     display: block;
     width: 30vw;
@@ -289,21 +324,20 @@ p
     font-weight: bold;
     color: #909597;
     text-align: left;
-    
+
 }
-.like
-{
+
+.flike {
     position: absolute;
     width: 10vw;
     left: 65vw;
-    top:3vh;
+    top: 3vh;
     text-align: center;
     height: 7vh;
-    
+
 }
 
-.echo
-{
+.fecho {
     position: absolute;
     width: 10vw;
     left: 75vw;
@@ -311,8 +345,8 @@ p
     text-align: center;
     height: 7vh;
 }
-.comment
-{
+
+.fcomment {
     position: absolute;
     width: 10vw;
     left: 85vw;
@@ -321,29 +355,28 @@ p
     height: 7vh;
 }
 
-.img_impression
-{
+.fimg_impression {
     text-align: center;
 }
-.txt_impression
-{
+
+.ftxt_impression {
     position: absolute;
     top: 2vh;
-    left: 2vw;;
+    left: 2vw;
+    ;
     color: #909597;
     font-weight: bold;
-    
-} 
 
-#button
-{
+}
+
+#fbutton {
     position: absolute;
     top: 80vh;
     left: 80vw;
     background-color: #007aff;
     border: none;
     font-size: 8vw;
-    color:#FFFFFF;
+    color: #FFFFFF;
     width: 15vw;
     height: 15vw;
     border-radius: 15vw;
@@ -351,8 +384,7 @@ p
     z-index: 10;
 }
 
-@font-face
-{
-  font-family: Roboto;
-  src:url('../font/Roboto-Light.ttf');
+@font-face {
+    font-family: Roboto;
+    src: url('../font/Roboto-Light.ttf');
 }
