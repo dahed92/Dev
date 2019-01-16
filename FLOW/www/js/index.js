@@ -46,6 +46,7 @@ var app = new Framework7({
 });
 
 var connected = false;
+var canShowNavbar = true;
 DisconnectUser();
 
 $("#tab1").load("pages/home.html");
@@ -55,18 +56,24 @@ $("#tab4").load("pages/notifications.html");
 
 $$('#tab1').on('tab:show', function () {
     app.showNavbar($('.navbar'));
+    canShowNavbar = true;
 });
 
 $$('#tab2').on('tab:show', function () {
     app.hideNavbar($('.navbar'));
+    canShowNavbar = false;
 });
 
 $$('#tab3').on('tab:show', function () {
     app.hideNavbar($('.navbar'));
+    canShowNavbar = false;
+
 });
 
 $$('#tab4').on('tab:show', function () {
     app.hideNavbar($('.navbar'));
+    canShowNavbar = false;
+
 });
 
 var userConnected = false;
@@ -81,6 +88,7 @@ ptrContent.on('ptr:refresh', function (e) {
         console.log("refreshed !");
         $("#ptr_arrow").css("opacity", "0");
         app.pullToRefreshDone();
+        ConnectUser();
     }, 1000);
 });
 

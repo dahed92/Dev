@@ -9560,8 +9560,11 @@ return t7;
                     if (currentScroll > 44) {
                         action = 'hide';
                     }
-                    else {
+                    else if (canShowNavbar) {
                         action = 'show';
+                    }
+                    else {
+                        action = 'hide';
                     }
                 }
         
